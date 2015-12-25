@@ -1,0 +1,104 @@
+This is a readme file for the GN3S-Linux driver. The driver is only compatible with certain configurations of the SiGe SE4110L GPS front-end combined with the Cypress FX2LP USB transceiver.
+
+
+The package consists of the following parts:
+
+fx2-programmer 		Used for programming RAM and EEPROM on the USB chip
+
+gn3s-firmware.ihx	Firmware for the FX2 chip (Intel HEX format for RAM)
+gn3s-firmware.iic	Firmware for the FX2 chip (I2C format for EEPROM)
+
+gn3s-full			The host program capable of streaming IF data from the 							SE4110L, in real-time, through the FX2 chip
+
+Included is also the full source code to build the files described above.
+
+
+QUICKSTART GUIDE
+
+
+If the board is already programmed with firmware in EEPROM it will automatically boot that firmware when connected (powered) to a computer.
+
+Data can then be collected using the "gn3s-full" program:
+
+To collect 32 MB of data to the file data.bin
+	./gn3s-full -s 32 -o data.bin
+
+
+ADVANCED OPTIONS
+
+
+The VID/PID is 0x16c0/0x072f by default, to use a device with a different ID:
+	./gn3s-full -s 32 -o data.bin -d 0x1781 -p 0x0b38
+
+By using the -c <config> option more advanced options can be selected.
+
+	config takes a hex argument consisting of 1 hex character
+		0x"DPSM" where each bit represents
+			M set (0x1) = stream to memory then dump to disk
+			S set (0x2) = pack samples into bytes (4 or 8 samples / byte)
+			P set (0x4) = subsample (without filtering) by a factor of 3
+			D set (0x8) = decimate from 2 bits (SGN-MAG) to 1 bit (SGN)
+
+M Option
+
+The host software supports two different operating modes, stream to disk (default) or stream to memory (-m flag)
+	./gn3s-full -s 32 -o data.bin -c 0x1
+
+WARNING: The -m flag should be used with caution since allocating very large amounts of memory can cause problems...
+
+S option
+
+Simply stores every third sample effectively changing the sampling rate and IF as:
+
+Old sampling rate = 16367667 Hz
+Standard IF       = 4123968  Hz
+
+New sampling rate = 5455889  Hz
+New IF            = 1331921  Hz
+
+P option
+
+Samples are packed low to high such as [s3 s2 s1 s0] for 2 bit samples in one byte.
+
+D option
+
+Simply decimates the data from 2 bit SGN-MAG to 1 bit SGN. 
+
+
+HINT:
+
+To achieve better performance, especially useful when collecting large data sets and experiencing buffer overruns, the "nice" feature can be used to increase the priority of the gn3s-full program
+
+	sudo nice -n -20 ./gn3s-full -s 1000 -o data.bin
+
+
+PROGRAMMING THE FX2 CHIP
+
+
+To program the board temporarily (will reset when disconnected):
+
+	./fx2-programmer 0x16c0 0x072f set 0xe600 1
+	./fx2-programmer 0x16c0 0x072f program ../firmware/gn3s-firmware.ihx
+	./fx2-programmer 0x16c0 0x072f set 0xe600 0
+
+To check the current EEPROM configuration:
+
+	./fx2-programmer 0x16c0 0x072f read_vendor
+
+If the first byte is x the device will boot as:
+
+x = 0x00 	default (Cypress VID: 0x04b4 PID: 0x8613)
+x = 0xC0	VID/PID as specified by the next 4 bytes in EEPROM
+x = 0xC2	boot from EEPROM, VID/PID will be specified by the firmware
+
+To program only VID/PID to EEPROM:
+
+	./fx2-programmer 0x04b4 0x8613 program_vendor 0x16c0 0x072f
+
+To write firmware in .iic format to EEPROM:
+
+	./fx2-programmer 0x16c0 0x072f program_fw ../firmware/gn3s-firmware.iic
+
+NOTE: This operation requires a file called serial.txt in the same directory! The file serial.txt should ONLY contain a serial number 5 DIGITS in length, such as "10000" (plain text without the double quotes). After each use of "program_fw" the serial number will be increased by one to allow programming of multiple devices.
+The USB-IF (who maintains the USB standard) states that each USB device must have a valid VID/PID and a unique serial number.
+

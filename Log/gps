@@ -1,0 +1,136 @@
+interfaces: 
+GPS: UART,SPI,I2C
+display: 3-wire serial (=SPI?)
+compass: SPI
+
+
+don't forget to mention temperature
+
+Battery:
+need 2.8-2.9V
+ LFP has 25% less capacity than other lithium batteries, The major differences between LFP batteries and ordinary lithium batteries are that LFP batteries do not have safety concerns such as overheating and explosion, that they have 4 to 5 times longer cycle lifetimes than the lithium batteries 8 to 10 times higher discharge power and 30 to 50% less weight.
+
+
+use switcher (linear regulator are not efficient, they use the same current so higher power
+
+	STMicroelectronics EFL700A39	$35.80	700mAh	3.9V
+	3*Energizer NH12 AAA	$2.75*3=8.25	700mAh	3.6V
+	3*Panasonic HHR-150AAC8 AA	$3.6*3=10.8	1.5Ah	3.6V
+	3*Panasonic HHR-210AAC4B AA	$4.23*3=12.69	2Ah	3.6V
+	Sparksfun Polymer Lithium Ion Battery - 1000mAh	$9.95	3.7V	lithium-ion polymer
+	SparksFun Polymer Lithium Ion Battery - 2000mAh	$12.95	3.7V	lithium-ion polymer
+	Eachine 3.7V 18650 2200mAh (Amazon)	$9.95 (w/shipping)	built-in protection, 75 reviews w/4.4
+	
+Battery holders:
+	AA:
+	MPD BC3AAL	$1.44	Style:Holder(open)	TerminationStyle:SolderLug
+	MPD BC3AAW	$1.50	Style:Holder(open)	TerminationStyle:WireLeads
+	BC3AAPC-ND	$1.50	Style:Holder(open)	TerminationStyle:PC Pin
+	Keystone Electronics 2487	$2.26	Style:Holder(covered)
+	18650:
+	Keystone Electronics 1044	$2.10	Holder(open)	SolderLug
+	
+Charger: microUSB
+
+	Li-Ion,Li-Pol
+	Skyworks Solutions Inc. AAT3681AIJS-4.2-T1	$0.48	8-TFSOJ		in:4-7.5V,out:4.1or4.2
+	Microchip Technology MCP73811T-420I/OT		$0.51	SOT-23-5	in:3.75-6,out:4.2
+
+buttons: on-off, up down right left middle, offGPS,offLCD
+	
+
+display: 2.7-2.9V spi
+
+Varitronix COG-C144MVGI-08	$7.05	128x128	1.44d/36.57mm	2.7-2.9V (2.8 typ), .85 mA (logic&LCD) = 
+
+
+
+
+gps: 2.8-4.2V, UART
+
+
+
+
+MCU: 
+16-bit: http://www.digikey.com/product-search/en?FV=fff40027%2Cfff800cd%2C2700038%2C270004b%2C270004c%2C2700052%2C2700068%2C2700072%2C2700076%2C2700077%2C2700079%2C2700088%2C270008d%2C270008e%2C270008f%2C270009f%2C27000a0%2C27000a3%2C27000a6%2C27000a9%2C27000aa%2C27000ac%2C27000b0%2C27000ba%2C27000bc%2C27000c5%2C27000c9%2C27000ca%2C27000d0%2C27000d3%2C27000db%2C27000dd%2C27000df%2C27000e1%2C27000e2%2C27000e3%2C27000e5%2C27000e6%2C27000ed%2C27000ee%2C27000f1%2C27000fe%2C2700100%2C2700107%2C2700111%2C2700125%2C2700126%2C2700127%2C270012a%2C270012d%2C2700132%2C2700133%2C2700134%2C2700135%2C2700138%2C270013b%2C270013c%2C270013d%2C2700140%2C2700142%2C2700144%2C2700145%2C2700146&k=usb&mnonly=0&newproducts=0&ColumnSort=1000011&page=1&stock=0&pbfree=0&rohs=0&quantity=&ptm=0&fid=0&pageSize=25
+
+	Silicon Labs EFM8BB10F2G-A-QFN20	$.42	20-UQFN
+	Silicon Labs EFM8BB10F8G-A-SOIC16	$.56	16-SOIC
+	Silicon Labs EFM8BB10F4G-A-QFN20	$.56	20-UQFN
+	Microchip Technology PIC12F1572-I/**	$.60	8-SOIC,8-TSSOP	8-bit 3.5KB 256B 
+	
+	Microchip Technology PIC32MX170F256B-I/SS	$3.51	28-SSOP	64KB	2.3-3.6V	40MHz(8internal)	0.5mA/MHz
+	Microchip Technology PIC32MX170F256B-I/SP	$3.74	28-SPDIP	64KB	2.3-3.6V	40MHz
+	PIC32MX170F256B-50I/SS		$3.80	28-SSOP	50MHz
+	PIC32MX170F256B-50I/SO		$3.84	28-SOIC	50 MHz
+	PIC32MX170F256B-50I/SP	$4.03	50MHz	28-SPDIP
+	
+	Freescale MKV31F512VLH12	$5.58	M4 120MHz	96KB,512KB	1.71-3.6V	64-LQFP
+	PIC24FJ128GB206-I/PT		$5.92	96,128KB	2.2-3.6V	64-TQFP
+	STM32L151RE			$5.11(arrow)	512KB,80KB	Cortex-M3 32MHz	1.8-3.6V, has usb	LQFP-64	195 μA/MHz=.195mA Run mode	12-bit ADC 1 Msps up to 40 channels
+	OR STMicroelectronics STM32L152RET6 $8.38. same characteristics, 2x12-bit ADC	-40-85
+	
+Orders from Arrow have $8 flat rate shipping
+	
+NUCLEO-L152RE	STM32L152RET6	$10.99
+	
+SSOP (Shrink small outline package) is a shrinked down version of SOIC (Small Outline Integrated Circuit)
+	...
+	
+	
+	
+	
+Pins requirement:
+	
+	
+	
+	
+	
+	
+	
+	
+GPS:
+	Antenova M10478-A2	$16.36
+				2.8-4.3V (typ 3.3)
+				no leads, pins underneath and accessible on the sides
+				Mediatek MT3337
+				Peak acquisition current: 31 mA
+				Avg tracking supply current: 23 mA
+				= 0.0759W
+				Standby (Sleep) power supply mode: < 200 uA
+				66 channels
+				hot start: <1s, warm start: <25s, cold start: <35s
+				standby mode can be used with a command (PMTK161 uart), no need for pin26
+				
+	Jupiter SE880		$13.30
+				Req:32KHz XTAL,16.369MHz TCXO,antenna
+				1.75-1.85V (typ 1.8)
+				UART/SPI/I2C
+				no leads, pins underneath
+				CSR SiRFFstarIV based
+				
+	Inventek ISM420R1-C33	$11.43
+				1.71-1.89V (typ 1.8)
+				UART/SPI/I2C
+				req antenna
+				based on CSR SiRFstarIV
+				no leads, pins underneath
+				48 channels (whatevs)
+				45 mA
+				
+	Antenova M10478-A1	$17.16
+				1.71-1.89V
+				31mA avg tracking supply current, 47 mA peak
+				=0.0558W (less w/ mode)
+				SiRFstarIV 9333 GPS chipset
+				UART,SPI,I2C
+
+
+TouchScreen
+	ADC
+	channels = how many sources, multiplexed
+	Touch screens are prohibitively expensive. A simple mass-produced touch screen overlay made for the Nintendo DS can be obtained for $8.00, more than the LCD screen itself, and the price skyrockets for more specific units such as one that would fit our inexpensive 1.44" screen. A set of simple, inexpensive buttons will be used to control this device with unmatched precision.
+
+
+
+common: 2.8-2.9V

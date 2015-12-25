@@ -1,0 +1,28 @@
+To install (build) the necessary files:
+
+HOST PROGRAM:
+
+cd gn3s-linux/src/host
+make clean all install
+
+FX2-PROGRAMMER:
+
+cd gn3s-linux/src/fx2-programmer-plus
+make all install
+
+These operations will install the binaries in the "bin" directory.  
+
+The firmware is already built for the 8051 MCU on the FX2 chip! It should only be rebuilt if it has been modified (see note at the bottom of this document).
+
+
+FIRMWARE:
+
+cd gn3s-linux/src/firmware/lib
+make clean all
+cd ../src
+make clean all install
+
+The firmware will be installed in the "firmware" directory.
+
+NOTE: There is a Cypress tool which converts firmware in .ihx format to .iic for EEPROM uploads, however this tool is for Windows only.
+

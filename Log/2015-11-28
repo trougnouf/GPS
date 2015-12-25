@@ -1,0 +1,136 @@
+standards: coordinates
+user interface: figure out font size / req
+
+
+figure out pin requirements from components
+find mcu
+
+
+
+16
+84-16=
+
+
+
+pins: 
+1 gpio to disable charger
+ADC port to check battery level
+1 gpio port to enable/disable battery check
+SPI display
+1 gpio to light
+SPI / I2C compass
+gps: spi/i2c/uart
+
+10pins?
+
+
+
+min RAM: (84x48)/8 = 504B
+200% = 1008B
+
+buttons: 
+Menu/OK
+arrows(4)
+//light
+
+hold
+
+6but
+16pins
+
+NON-USB: 
+
+Silicon Labs EFM8BB31F16G-A-QSOP24
+$0.87
+ 24-QSOP
+ 2.25KB,16KB
+ 50MHz 8-bit CIP-51 8051
+ 2.2-3.6V
+ on-chip Silicon Labs 2-Wire (C2) debug interface to allow flash programming and in-system debugging
+ -40 - 85
+ normal mode fs: 25MHz: 4.5mA, 1.53MHz: 0.615mA, idle 25MHz: 2.8mA, idle 1.53MHz: 0.455uA
+
+  
+Freescale Semiconductor MKE04Z8VWJ4
+  $0.92
+  Cortex M-0 32-bit 48MHz
+  20-SOIC
+  18 i/o
+  1K,8K
+  2.7-5.5V
+  -40-105
+  @3.3V
+  run mode 48MHz: 9.9 mA
+  	25MHz: 6.9 mA
+  	12MHz: 4.2 mA
+  	1 MHz: 1.9 mA
+  	wait mode: 7.1, 6.2, 3.5, 1.8
+
+Microchip Technology PIC16LF1618-I/SS
+  $1.02
+  PIC
+  20-SSOP
+  1K,7KB (4K x 14)
+  1.8-3.6V
+  -40-85
+  <=16MHz: 1.8-3.6V
+  <= 32MHz: 2.5-3.6V
+  normal mode:
+  32MHz: 5mA @ 3V
+  16MHz: 1.85 mA @ 3V, 1.2 mA @ 1.8V
+  8MHz: 1.3 mA @ 3V, 0.800 mA @ 1.8V
+  
+  uses far less power
+
+USB: 
+
+Silicon Labs EFM8UB11F16G-C-QSOP24
+  $1.33
+  USB
+  
+ Microchip Technology PIC32MX210F016B-I/SS
+ $2.24
+ MIPS32 M4K 40MHz
+ 28-SSOP
+ 19 I/O
+ 2.3-3.6V
+ 
+STMicroelectronics STM32L052K6T6
+$2.20 (arrow)
+-40-85
+LQFP-32
+Cortex M0+ 32MHz, 8KB,32KB, 27 I/O
+1.65-3.6V
+88 uA/MHz run mode
+= 2.816 mA @ 32MHz, 1.408 mAh @ 16 MHz, 0.704 mA @ 8 MHz
+
+STM32L053R8T6 dev board, $10.99 on digikey
+
+ 
+
+on/off (connected to power/switcher)
+
+
+
+B,L brightness
+
+menu:
+	- coordinates
+		- system
+		//- hide
+	- sleep delay
+		- light
+		- screen
+		- gps
+	- refresh rate
+		- gps
+		- compass
+		- directions
+	- brightness
+	- exit
+press ok on current number 5 times to use current location
+
+if screen is off don't update framebuffer.
+if screen is on refresh after all tasks are complete.
+
+	
