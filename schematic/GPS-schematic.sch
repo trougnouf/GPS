@@ -1,0 +1,180 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:antenova
+LIBS:melexis
+LIBS:generic
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Battery BT?
+U 1 1 56875A21
+P 1700 3400
+F 0 "BT?" H 1800 3450 50  0000 L CNN
+F 1 "Battery" H 1800 3350 50  0000 L CNN
+F 2 "" V 1700 3440 50  0000 C CNN
+F 3 "" V 1700 3440 50  0000 C CNN
+	1    1700 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L MLX90393 IC?
+U 1 1 56876FD4
+P 3850 3600
+F 0 "IC?" H 3500 4050 60  0000 C CNN
+F 1 "MLX90393" H 4050 3150 60  0000 C CNN
+F 2 "" H 3550 3200 60  0000 C CNN
+F 3 "" H 3550 3200 60  0000 C CNN
+	1    3850 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L M10478-A2 IC?
+U 1 1 56877043
+P 2350 4700
+F 0 "IC?" H 1700 5250 60  0000 C CNN
+F 1 "M10478-A2" H 2900 4050 60  0000 C CNN
+F 2 "" H 2100 4750 60  0000 C CNN
+F 3 "" H 2100 4750 60  0000 C CNN
+	1    2350 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Nokia5110LCD DS?
+U 1 1 5687720E
+P 5100 5000
+F 0 "DS?" H 5000 5250 60  0000 C CNN
+F 1 "Nokia5110LCD" H 5200 4750 60  0000 C CNN
+F 2 "" H 5100 4900 60  0000 C CNN
+F 3 "" H 5100 4900 60  0000 C CNN
+	1    5100 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L SW_PUSH SW?
+U 1 1 56877273
+P 2950 2200
+F 0 "SW?" H 3100 2310 50  0000 C CNN
+F 1 "SW_PUSH" H 2950 2120 50  0000 C CNN
+F 2 "" H 2950 2200 50  0000 C CNN
+F 3 "" H 2950 2200 50  0000 C CNN
+	1    2950 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L SW_PUSH SW?
+U 1 1 5687737E
+P 4050 2250
+F 0 "SW?" H 4200 2360 50  0000 C CNN
+F 1 "SW_PUSH" H 4050 2170 50  0000 C CNN
+F 2 "" H 4050 2250 50  0000 C CNN
+F 3 "" H 4050 2250 50  0000 C CNN
+	1    4050 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L SW_PUSH SW?
+U 1 1 568773FB
+P 3050 1600
+F 0 "SW?" H 3200 1710 50  0000 C CNN
+F 1 "SW_PUSH" H 3050 1520 50  0000 C CNN
+F 2 "" H 3050 1600 50  0000 C CNN
+F 3 "" H 3050 1600 50  0000 C CNN
+	1    3050 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L SW_PUSH SW?
+U 1 1 56877474
+P 4100 1500
+F 0 "SW?" H 4250 1610 50  0000 C CNN
+F 1 "SW_PUSH" H 4100 1420 50  0000 C CNN
+F 2 "" H 4100 1500 50  0000 C CNN
+F 3 "" H 4100 1500 50  0000 C CNN
+	1    4100 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L SW_PUSH SW?
+U 1 1 568774A3
+P 3050 1150
+F 0 "SW?" H 3200 1260 50  0000 C CNN
+F 1 "SW_PUSH" H 3050 1070 50  0000 C CNN
+F 2 "" H 3050 1150 50  0000 C CNN
+F 3 "" H 3050 1150 50  0000 C CNN
+	1    3050 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L SW_PUSH SW?
+U 1 1 568774EE
+P 4000 1050
+F 0 "SW?" H 4150 1160 50  0000 C CNN
+F 1 "SW_PUSH" H 4000 970 50  0000 C CNN
+F 2 "" H 4000 1050 50  0000 C CNN
+F 3 "" H 4000 1050 50  0000 C CNN
+	1    4000 1050
+	1    0    0    -1  
+$EndComp
+$Comp
+L SW_PUSH SW?
+U 1 1 56877517
+P 5050 1100
+F 0 "SW?" H 5200 1210 50  0000 C CNN
+F 1 "SW_PUSH" H 5050 1020 50  0000 C CNN
+F 2 "" H 5050 1100 50  0000 C CNN
+F 3 "" H 5050 1100 50  0000 C CNN
+	1    5050 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L SW_PUSH SW?
+U 1 1 56877542
+P 5100 1600
+F 0 "SW?" H 5250 1710 50  0000 C CNN
+F 1 "SW_PUSH" H 5100 1520 50  0000 C CNN
+F 2 "" H 5100 1600 50  0000 C CNN
+F 3 "" H 5100 1600 50  0000 C CNN
+	1    5100 1600
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
