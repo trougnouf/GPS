@@ -1,4 +1,4 @@
-update=Sat 02 Jan 2016 01:24:13 AM EST
+update=Sat 02 Jan 2016 12:57:27 PM EST
 version=1
 last_client=kicad
 [pcbnew]
@@ -61,3 +61,4 @@ LibName29=valves
 LibName30=antenova
 LibName31=melexis
 LibName32=generic
+LibName33=diodesinc
